@@ -146,13 +146,12 @@ exports.logInUser = async (req, res) => {
             { expiresIn: "7d" }
         );
 
-        // ✅ FINAL CORRECT RESPONSE
         res.status(200).send({
             success: true,
             message: "Login Successful",
             token,
             user: {
-                userId: reqUser.userId,           // 🔥 IMPORTANT
+                userId: reqUser.userId,     
                 name: reqUser.name,
                 email: reqUser.email,
                 mobileNumber: reqUser.mobileNumber || "",
@@ -207,7 +206,7 @@ exports.googleSingUp = async (req, res) => {
                     userId: user.userId,
                     name: user.name,
                     email: user.email,
-                    mobileNumber: user.mobileNumber || "",   // ✅ FIX
+                    mobileNumber: user.mobileNumber || "",  
                     role: user.role 
                 }
             });
@@ -458,7 +457,7 @@ exports.addAddress = async (req, res) => {
             });
         }
 
-        // ✅ ensure array exists
+        // ensure array exists
         if (!user.addresses) {
             user.addresses = [];
         }

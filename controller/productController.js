@@ -1,6 +1,6 @@
 const Product = require("../model/productModel");
 
-/* ✅ UPLOAD ORGANIC RANGE PRODUCTS */
+/* UPLOAD ORGANIC RANGE PRODUCTS */
 exports.uploadProducts = async (req, res) => {
   try {
     const products = req.files.map((file, index) => ({
@@ -24,7 +24,7 @@ exports.uploadProducts = async (req, res) => {
   }
 };
 
-/* ✅ GET ORGANIC RANGE PRODUCTS */
+/* GET ORGANIC RANGE PRODUCTS */
 exports.getProducts = async (req, res) => {
   try {
     const data = await Product.find();
